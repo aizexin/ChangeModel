@@ -49,6 +49,12 @@ extension TransformDataProtocol {
         return self
     }
     
+    /// 建立关联，只有id和type、遵循协议的类
+    ///
+    /// - Parameters:
+    ///   - propertyName: 以那个属性作为key
+    ///   - any: 任何遵循协议的类
+    /// - Returns:
     func buildConnection(propertyName: String,any :TransformDataProtocol) -> Any? {
         ///根据实例创建反射结构体Mirror
         let mirror = Mirror(reflecting: any)
@@ -79,9 +85,7 @@ extension TransformDataProtocol {
             return data
         }
         return any
-        
     }
-    
 }
 
 //扩展可选类型，使其遵循转换协议，可选类型值为nil时，不转化进字典中
