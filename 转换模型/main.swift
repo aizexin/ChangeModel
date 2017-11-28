@@ -26,13 +26,10 @@ image.subImage  = subImage
 model.image = image
 
 print("---------")
-//_ = TransformDataTool.ai_propertyList(className: model.className)
-//TransformDataTool.test(obj: model)
-if let printmodel = model.transformDataWith(propertyName: "id") {
-    print(printmodel)
-} else {
-    
-}
+
+ let printmodel = model.transformDataToindex(propertyName: "id")
+ print(printmodel)
+
 //for (key,value) in storeListDict {
 //    print("key = \(key),value= \(value.debugDescription)\n")
 //}

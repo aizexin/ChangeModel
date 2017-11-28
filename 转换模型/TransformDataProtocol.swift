@@ -5,12 +5,44 @@ var storeListDict = [String:[String:Any]]()
 
 //自定义一个转换协议
 protocol TransformDataProtocol {
-    func transformDataWith(propertyName: String) -> Any?
+    
+    ///将一个模型 数据转成存储的字典
+    func transformDataToStoreWith(propertyName: String) -> Any?
+    
+    /// 把模型以 属性名字 转为索引类型
+    ///
+    /// - Parameter propertyName: 属性名字
+    /// - Returns: 索引字典
+    func transformDataToindex(propertyName: String) -> [String:String]
 }
-//扩展协议方法，实现一个通用的toJSONModel方法（反射实现）
+
+//扩展协议方法，实现一个通用的方法（反射实现）
 extension TransformDataProtocol {
-    //将模型数据转成可用的字典数据，Any表示任何类型，除了方法类型
-    func transformDataWith(propertyName: String) -> Any? {
+    
+    /// 把模型以 属性名字 转为索引类型
+    func transformDataToindex(propertyName: String) -> [String:String] {
+        ///根据实例创建反射结构体Mirror
+        let mirror = Mirror(reflecting: self)
+        if mirror.children.count <= 0  {
+            return [:]
+        }
+        //创建一个空字典，用于后面添加键值对
+        var result: [String:String] = [:]
+        //遍历实例的所有属性集合
+        for children in mirror.children {
+            let propertyNameString = children.label!
+            let value = children.value
+            if propertyNameString == propertyName {
+                result[propertyNameString]   = value as? String
+                let typeString = "\(mirror.subjectType)"
+                result["type"]               = typeString
+            }
+        }
+        return result
+    }
+    
+    ///将一个模型 数据转成存储的字典
+    func transformDataToStoreWith(propertyName: String) -> Any? {
         
         ///根据实例创建反射结构体Mirror
         let mirror = Mirror(reflecting: self)
@@ -91,13 +123,22 @@ extension TransformDataProtocol {
 //扩展可选类型，使其遵循转换协议，可选类型值为nil时，不转化进字典中
 extension Optional :TransformDataProtocol {
     //可选类型重写transformDataWith()方法
-    func transformDataWith(propertyName: String) -> Any? {
+    func transformDataToStoreWith(propertyName: String) -> Any? {
         if let x = self {
             if let value = x as? TransformDataProtocol {
-                return value.transformDataWith(propertyName: propertyName)
+                return value.transformDataToStoreWith(propertyName: propertyName)
             }
         }
         return nil
+    }
+    
+    func transformDataToindex(propertyName: String) -> [String : String] {
+        if let x = self {
+            if let value = x as? TransformDataProtocol {
+                return value.transformDataToindex(propertyName: propertyName)
+            }
+        }
+        return [:]
     }
 }
 
