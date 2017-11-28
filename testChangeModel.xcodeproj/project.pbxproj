@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4556FAA11FCD4CC6007DCCF0 /* SubImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */; };
 		45C0DD061FCBB37200C341B8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD051FCBB37200C341B8 /* main.swift */; };
+		45C0DD0F1FCBB3E200C341B8 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD0E1FCBB3E200C341B8 /* ProductModel.swift */; };
+		45C0DD111FCBB3ED00C341B8 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD101FCBB3ED00C341B8 /* ImageModel.swift */; };
+		45C0DD131FCBEDB800C341B8 /* TransformDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD121FCBEDB800C341B8 /* TransformDataProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		45C0DD021FCBB37200C341B8 /* 转换模型 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "转换模型"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImageModel.swift; sourceTree = "<group>"; };
+		45C0DD021FCBB37200C341B8 /* testChangeModel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testChangeModel; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C0DD051FCBB37200C341B8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45C0DD0E1FCBB3E200C341B8 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		45C0DD101FCBB3ED00C341B8 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		45C0DD121FCBEDB800C341B8 /* TransformDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformDataProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +57,7 @@
 		45C0DD031FCBB37200C341B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45C0DD021FCBB37200C341B8 /* 转换模型 */,
+				45C0DD021FCBB37200C341B8 /* testChangeModel */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				45C0DD051FCBB37200C341B8 /* main.swift */,
+				45C0DD0E1FCBB3E200C341B8 /* ProductModel.swift */,
+				45C0DD101FCBB3ED00C341B8 /* ImageModel.swift */,
+				4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */,
+				45C0DD121FCBEDB800C341B8 /* TransformDataProtocol.swift */,
 			);
 			path = "转换模型";
 			sourceTree = "<group>";
@@ -65,9 +77,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45C0DD011FCBB37200C341B8 /* 转换模型 */ = {
+		45C0DD011FCBB37200C341B8 /* testChangeModel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45C0DD091FCBB37200C341B8 /* Build configuration list for PBXNativeTarget "转换模型" */;
+			buildConfigurationList = 45C0DD091FCBB37200C341B8 /* Build configuration list for PBXNativeTarget "testChangeModel" */;
 			buildPhases = (
 				45C0DCFE1FCBB37200C341B8 /* Sources */,
 				45C0DCFF1FCBB37200C341B8 /* Frameworks */,
@@ -77,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = "转换模型";
+			name = testChangeModel;
 			productName = "转换模型";
-			productReference = 45C0DD021FCBB37200C341B8 /* 转换模型 */;
+			productReference = 45C0DD021FCBB37200C341B8 /* testChangeModel */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 45C0DCFD1FCBB37200C341B8 /* Build configuration list for PBXProject "转换模型" */;
+			buildConfigurationList = 45C0DCFD1FCBB37200C341B8 /* Build configuration list for PBXProject "testChangeModel" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45C0DD011FCBB37200C341B8 /* 转换模型 */,
+				45C0DD011FCBB37200C341B8 /* testChangeModel */,
 			);
 		};
 /* End PBXProject section */
@@ -120,7 +132,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C0DD131FCBEDB800C341B8 /* TransformDataProtocol.swift in Sources */,
+				45C0DD0F1FCBB3E200C341B8 /* ProductModel.swift in Sources */,
 				45C0DD061FCBB37200C341B8 /* main.swift in Sources */,
+				4556FAA11FCD4CC6007DCCF0 /* SubImageModel.swift in Sources */,
+				45C0DD111FCBB3ED00C341B8 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +272,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		45C0DCFD1FCBB37200C341B8 /* Build configuration list for PBXProject "转换模型" */ = {
+		45C0DCFD1FCBB37200C341B8 /* Build configuration list for PBXProject "testChangeModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45C0DD071FCBB37200C341B8 /* Debug */,
@@ -265,7 +281,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45C0DD091FCBB37200C341B8 /* Build configuration list for PBXNativeTarget "转换模型" */ = {
+		45C0DD091FCBB37200C341B8 /* Build configuration list for PBXNativeTarget "testChangeModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45C0DD0A1FCBB37200C341B8 /* Debug */,
