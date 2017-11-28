@@ -11,7 +11,7 @@ import Cocoa
 class ProductModel: NSObject, TransformDataProtocol {
     var id    : String!
     var name  : String!
-    var image : ImageModel = ImageModel()
+    var image : ImageModel?
     
 //    override init() {
 //        
