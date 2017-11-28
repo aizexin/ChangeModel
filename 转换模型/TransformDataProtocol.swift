@@ -118,6 +118,51 @@ extension TransformDataProtocol {
         }
         return any
     }
+    
+    
+    /// 通过索引去查询还原实体
+    ///
+    /// - Parameter index: 索引字典
+    /// - Returns:
+    func transformStoreWithIndex(index:[String: String],key :String) -> Any? {
+        guard let id = index[key],
+        let type = index["type"] else {
+            return nil
+        }
+        var typeArray = storeListDict[type]
+        let object : AnyObject? = NSClassFromString(type)
+        let mirror = Mirror(reflecting: typeArray![id]!)
+        
+        for child in mirror.children {
+            let subMirror = Mirror.init(reflecting: child.value)
+            if subMirror.subjectType is String.Type {
+                object?.setValue(child.value, forKey: child.label!)
+            } else {
+                object?.setValue(transformStoreWithIndex(index: child.value as! [String: String], key: key), forKey: child.label!)
+            }
+        }
+        return nil
+    }
+    
+    /// 储存
+    func saveToStore(propertyName: String) -> Void {
+        ///根据实例创建反射结构体Mirror
+        let mirror = Mirror(reflecting: self)
+        let typeName = "\(mirror.subjectType)"
+        
+        //获取这个类的字典
+        if var dict = storeListDict[typeName] {
+            var idkey = ""
+            for child in mirror.children {
+                if child.label == propertyName {
+                    idkey = child.value as! String
+                }
+            }
+            if let any = transformDataToStoreWith(propertyName: propertyName) {
+                dict.updateValue(any, forKey: idkey)
+            }
+        }
+    }
 }
 
 //扩展可选类型，使其遵循转换协议，可选类型值为nil时，不转化进字典中
