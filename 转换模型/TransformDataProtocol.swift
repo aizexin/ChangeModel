@@ -151,15 +151,22 @@ extension TransformDataProtocol {
         let typeName = "\(mirror.subjectType)"
         
         //获取这个类的字典
-        if var dict = storeListDict[typeName] {
-            var idkey = ""
-            for child in mirror.children {
-                if child.label == propertyName {
-                    idkey = child.value as! String
-                }
+        var idkey = ""
+        for child in mirror.children {
+            if child.label == propertyName {
+                idkey = child.value as! String
             }
+        }
+        if var dict = storeListDict[typeName] {
             if let any = transformDataToStoreWith(propertyName: propertyName) {
-                dict.updateValue(any, forKey: idkey)
+//                dict.updateValue(any, forKey: idkey)
+                dict[idkey] = any as? [String : Any]
+                storeListDict[typeName] = dict
+            }
+        } else {
+            if let any = transformDataToStoreWith(propertyName: propertyName) {
+                storeListDict[typeName] = any as? [String : Any]
+//                storeListDict.updateValue([idkey:any], forKey: typeName)
             }
         }
     }

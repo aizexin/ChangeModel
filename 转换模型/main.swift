@@ -28,9 +28,20 @@ model.image = image
 print("---------")
 
  let printmodel = model.transformDataToindex(propertyName: "id")
- print(printmodel)
+// print(printmodel)
+
+model.saveToStore(propertyName: "id")
+
+let model2  = ProductModel()
+model2.id   = "2"
+model2.name = "aizexin222"
+
+model2.saveToStore(propertyName: "id")
 
 //for (key,value) in storeListDict {
 //    print("key = \(key),value= \(value.debugDescription)\n")
 //}
+//print(model.transformDataToindex(propertyName: "id"))
 
+let model3 = model.transformStoreWithIndex(index: model.transformDataToindex(propertyName: "id"), key: "id")
+print(model3)
