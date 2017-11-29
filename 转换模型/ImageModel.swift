@@ -8,10 +8,14 @@
 
 import Cocoa
 
-class ImageModel :TransformDataProtocol {
-    var id  :String!
-    var url :String!
+class ImageModel :NSObject ,TransformDataProtocol {
+    @objc var id  :String!
+    @objc var url :String!
     var subImage : SubImageModel?
+    
+    required override init() {
+        
+    }
 //    override var description: String {
 //         return """
 //                id  = \(id)

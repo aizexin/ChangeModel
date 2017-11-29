@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4556FAA11FCD4CC6007DCCF0 /* SubImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */; };
+		45A711341FCEC94C00A7E663 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A711331FCEC94C00A7E663 /* BaseObject.swift */; };
 		45C0DD061FCBB37200C341B8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD051FCBB37200C341B8 /* main.swift */; };
 		45C0DD0F1FCBB3E200C341B8 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD0E1FCBB3E200C341B8 /* ProductModel.swift */; };
 		45C0DD111FCBB3ED00C341B8 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0DD101FCBB3ED00C341B8 /* ImageModel.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImageModel.swift; sourceTree = "<group>"; };
+		45A711331FCEC94C00A7E663 /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		45C0DD021FCBB37200C341B8 /* testChangeModel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testChangeModel; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C0DD051FCBB37200C341B8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45C0DD0E1FCBB3E200C341B8 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				45C0DD101FCBB3ED00C341B8 /* ImageModel.swift */,
 				4556FAA01FCD4CC6007DCCF0 /* SubImageModel.swift */,
 				45C0DD121FCBEDB800C341B8 /* TransformDataProtocol.swift */,
+				45A711331FCEC94C00A7E663 /* BaseObject.swift */,
 			);
 			path = "转换模型";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				45C0DD061FCBB37200C341B8 /* main.swift in Sources */,
 				4556FAA11FCD4CC6007DCCF0 /* SubImageModel.swift in Sources */,
 				45C0DD111FCBB3ED00C341B8 /* ImageModel.swift in Sources */,
+				45A711341FCEC94C00A7E663 /* BaseObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

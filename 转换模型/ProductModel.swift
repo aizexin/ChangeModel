@@ -9,19 +9,20 @@
 import Cocoa
 
 class ProductModel: NSObject, TransformDataProtocol {
-    var id    : String!
-    var name  : String!
+    @objc var id    : String!
+    @objc var name  : String!
     var image : ImageModel?
+    
     
 //    override init() {
 //        
 //    }
     
-    override var description: String {
-        return """
-                id = \(id)
-                name = \(name)
-               """
-    }
+//    override var description: String {
+//        return """
+//                id = \(id)
+//                name = \(name)
+//               """
+//    }
 }
 

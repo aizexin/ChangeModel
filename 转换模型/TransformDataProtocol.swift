@@ -130,18 +130,33 @@ extension TransformDataProtocol {
             return nil
         }
         var typeArray = storeListDict[type]
-        let object : AnyObject? = NSClassFromString(type)
-        let mirror = Mirror(reflecting: typeArray![id]!)
+        let dict      = typeArray![id]! as! [String:Any]
+    
+        let classStringName = "\("testChangeModel").\(type)"
         
-        for child in mirror.children {
-            let subMirror = Mirror.init(reflecting: child.value)
-            if subMirror.subjectType is String.Type {
-                object?.setValue(child.value, forKey: child.label!)
+        guard let anyClass = NSClassFromString(classStringName) else {
+            print("生成object不成功")
+            return nil
+        }
+        
+        guard let objectClass = anyClass as? NSObject.Type else {
+            print("生成objectClass不成功")
+            return nil
+        }
+        
+        let object = objectClass.init()
+        
+        for (key,value) in dict {
+            let subMirror = Mirror.init(reflecting: value)
+            if "\(subMirror.subjectType)" == "ImplicitlyUnwrappedOptional<String>" {
+                object.setValue(value, forKey: key)
             } else {
-                object?.setValue(transformStoreWithIndex(index: child.value as! [String: String], key: key), forKey: child.label!)
+                let subValue = transformStoreWithIndex(index: value as! [String: String], key: key)
+                object.setValue(subValue, forKey: key)
             }
         }
-        return nil
+
+        return object
     }
     
     /// 储存

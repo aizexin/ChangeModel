@@ -9,6 +9,10 @@
 import Cocoa
 
 class SubImageModel: NSObject, TransformDataProtocol {
-    var id      :String!
-    var subname : String!
+    @objc var id      :String!
+    @objc var subname : String!
+    
+    required override init() {
+        
+    }
 }
